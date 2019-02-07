@@ -1,26 +1,26 @@
 <header class="row">
   <div class="col-6 logo-header">
-    <img src="assets/icon-left-font.png" alt="groupomania logo">
+    <img src="assets/icon-left-font-monochrome-white.png" alt="groupomania logo">
   </div>
   <div class="col-6 header-links">
     <ul class="nav float-right">
       <li class="nav-item" *ngIf="!auth.isAuth">
-        <a class="nav-link" routerLink="auth/login" routerLinkActive="active border border-left-0 border-right-0 border-primary">Login</a>
+        <a class="nav-link" routerLink="auth/login" routerLinkActive="active border border-left-0 border-right-0">Login</a>
       </li>
       <li class="nav-item" *ngIf="!auth.isAuth">
-        <a class="nav-link" routerLink="auth/signup" routerLinkActive="active border border-left-0 border-right-0 border-primary">Sign up</a>
+        <a class="nav-link" routerLink="auth/signup" routerLinkActive="active border border-left-0 border-right-0">Sign up</a>
       </li>
       <li class="nav-item" *ngIf="auth.isAuth">
-        <a class="nav-link text-primary" routerLink="home" routerLinkActive="active border border-left-0 border-right-0 border-primary">Forums</a>
+        <a class="nav-link" routerLink="home" routerLinkActive="active border border-left-0 border-right-0">Latest GIFs</a>
       </li>
       <li class="nav-item" *ngIf="auth.isAuth">
-        <a class="nav-link text-primary" routerLink="post/new" routerLinkActive="active border border-left-0 border-right-0 border-primary">New Post</a>
+        <a class="nav-link" routerLink="post/new" routerLinkActive="active border border-left-0 border-right-0">New Post</a>
       </li>
       <li class="nav-item" *ngIf="auth.isAuth">
-        <a class="nav-link text-primary" routerLink="profile/me" routerLinkActive="active border border-left-0 border-right-0 border-primary">My Profile</a>
+        <a class="nav-link" routerLink="profile/me" routerLinkActive="active border border-left-0 border-right-0">My Profile</a>
       </li>
       <li class="nav-item" *ngIf="auth.isAuth">
-        <a class="nav-link text-primary" style="cursor: pointer" (click)="onLogout()">Logout</a>
+        <a class="nav-link" style="cursor: pointer;color:white;" (click)="onLogout()">Logout</a>
       </li>
     </ul>
   </div>

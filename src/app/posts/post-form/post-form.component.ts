@@ -5,6 +5,7 @@ import { PostsService } from '../../services/posts.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../models/User.model';
 import { Post } from '../../models/Post.model';
+import { RandomCatService } from '../../services/random-cat.service';
 
 @Component({
   selector: 'app-post-form',
@@ -26,7 +27,8 @@ export class PostFormComponent implements OnInit {
               private auth: AuthService,
               private posts: PostsService,
               private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private cats: RandomCatService) { }
 
   ngOnInit() {
     if (this.route.snapshot.params['id']) {
@@ -82,7 +84,7 @@ export class PostFormComponent implements OnInit {
     const content = this.postForm.get('content').value;
     if (this.mode === 'new') {
       if (this.imageAdded) {
-        this.posts.createPost(authorId, title, content, this.generateRandomKitten())
+        this.posts.createPost(authorId, title, content, this.cats.returnRandomCatGif())
           .then(
             () => {
               this.router.navigateByUrl('/home');
@@ -106,7 +108,7 @@ export class PostFormComponent implements OnInit {
       }
     } else {
       const newPost = this.imageModified ?
-        new Post(this.currentUser.id, title, content, this.generateRandomKitten()) :
+        new Post(this.currentUser.id, title, content, this.cats.returnRandomCatGif()) :
         new Post(this.currentUser.id, title, content, this.post.imageUrl);
       this.posts.modifyPost(this.post.id, this.currentUser.id, newPost)
         .then(

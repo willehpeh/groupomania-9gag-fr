@@ -23,6 +23,7 @@ export class PostsService {
         'butt lick butt fart rainbows until owner yells pee in litter box hiss at cats. Lick the other ' +
         'cats hack up furballs destroy couch as revenge. Where is my slave?',
       created_at: new Date(Date.now() - 120000),
+      imageUrl: 'https://media.giphy.com/media/FP2OpdSFCR7hK/giphy.gif',
       usersUpVoted: [1, 2],
       usersDownVoted: []
     },
@@ -41,7 +42,7 @@ export class PostsService {
         'against wall but walk away like nothing happened proudly present butt to human so i like ' +
         'big cats and i can not lie yet thug cat ',
       created_at: new Date(),
-      imageUrl: 'assets/kitten.jpg',
+      imageUrl: 'https://media.giphy.com/media/nNxT5qXR02FOM/giphy.gif',
       usersUpVoted: [],
       usersDownVoted: []
     },
